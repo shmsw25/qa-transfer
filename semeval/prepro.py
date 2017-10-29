@@ -8,6 +8,9 @@ import os
 import six
 from tqdm import tqdm
 import re
+
+from IPython import embed
+
 from squad.utils import get_word_span, get_word_idx, process_tokens
 
 def main():
@@ -176,7 +179,6 @@ def prepro_each(args, data_type):
                 if np.random.randint(10)>0: put()
             elif data_type=='train' and yi==2:
                 for t in range(3): put()
-
     lower_word2vec_dict = get_word2vec(args.glove_dir, lower_word_counter)
     data = {'q': q, 'cq': cq, 'y': y, '*x': rx, '*cx': rcx,
             'idxs': idxs, 'ids': ids, '*p': rx}

@@ -41,6 +41,7 @@ Each line is for training and testing, respectively.
 - `out_base_dir` is for storing saves, logs, evals and shared.json. These are stored in `<out_base_dir>/basic/<run_id>`.
 - `num_steps` is number of training steps (global_steps). 20000 is recommended for BiDAF.
 - `dev_name` and `test_name` are 'dev' or 'test'. (Default='test') We use 'dev' for SQuAD because test set of SQuAD is not available.
+- `sent_size_th` and `ques_size_th` are for threshold of number of words in context and question, respectively. 500 and 30, by default. For less memory usage, you can reduce the number.
 
 For tensorboard, run `tensorboard --logdir=out/squad/basic/<RUN_ID>/log`
 
@@ -69,7 +70,6 @@ python -m basic.cli --mode test -data_dir data/wikiqa-class --out_base_dir out/w
 - `load_trained_model` should be true in order to use pretrained model. If you do not want to use pretrained model, you can omit this, along with `load_path` and `shared_path`.
 - `dev_name` and `test_name` is `dev` or `test`.
 
-
 Checking Precision, Recall and P@1 in a real time during training is not implemented yet. Here is how to evaluate on these metrics.
 
 First, choose global_step which has the highest metric. (In the paper, we choose one with the highest Precision, following previous works)
@@ -96,9 +96,11 @@ Note: The ensemble model in the paper use 12 different pretrained models on SQuA
 
 Basically, it use pretrained model from SQuAD.
 ```
-python -m basic.cli --data_dir data/semeval --out_base_dir out/semeval --num_steps 5000 --load_path <LOAD_PATH> --shared_path <SHARED_PATH> --load_shared --load_trained_model
-python -m basic.cli --mode test --data_dir data/semeval --out_base_dir out/semeval --shared_path <SHARED_PATH> --load_step <LOAD_STEP> --load_shared
+python -m basic.cli --data_dir data/semeval --out_base_dir out/semeval --num_steps 5000 --load_path <LOAD_PATH> --shared_path <SHARED_PATH> --load_shared --nocluster --load_trained_model --sent_size_th 150 --ques_size_th 100
+python -m basic.cli --mode test --data_dir data/semeval --out_base_dir out/semeval --shared_path <SHARED_PATH> --load_step <LOAD_STEP> --load_shared  --nocluster --sent_size_th 150 --ques_size_th 100
 ```
+
+Note that you should use `--load_shared --nocluster`, and modify `sent_size_th` and `ques_size_th` for SemEval.
 
 Then, evaluate the model.
 ```

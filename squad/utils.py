@@ -1,5 +1,4 @@
 import re
-from IPython import embed
 
 def get_2d_spans(text, tokenss):
     spanss = []
@@ -64,11 +63,7 @@ def get_flat_idx(wordss, idx):
 
 def get_word_idx(context, wordss, idx):
     spanss = get_2d_spans(context, wordss)
-    try:
-        idx = spanss[idx[0]][idx[1]][0]
-    except Exception:
-        embed()
-        assert False
+    idx = spanss[idx[0]][idx[1]][0]
     return idx
 
 def process_tokens(temp_tokens):
