@@ -7,9 +7,7 @@ import os
 from collections import Counter
 import numpy as np
 from tqdm import tqdm
-from IPython import embed
 from squad.utils import get_word_span, get_word_idx, process_tokens
-
 
 def main():
     args = get_args()

@@ -1,6 +1,4 @@
 import tensorflow as tf
-from IPython import embed
-
 
 from basic.model import Model
 from my.tensorflow import average_gradients

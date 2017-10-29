@@ -1,7 +1,6 @@
 import argparse
 import os
 import json, gzip, pickle
-from IPython import embed
 import numpy as np
 
 def get_args():

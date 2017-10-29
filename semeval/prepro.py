@@ -1,7 +1,6 @@
 import argparse
 import json, io
 import xmltodict
-from IPython import embed
 import numpy as np
 from collections import Counter
 import nltk

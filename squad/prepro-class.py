@@ -2,7 +2,6 @@ import argparse
 import json
 import os
 from collections import Counter
-from IPython import embed
 from tqdm import tqdm
 
 from squad.utils import get_word_span, get_word_idx, process_tokens

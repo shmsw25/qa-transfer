@@ -1,9 +1,6 @@
 import argparse
 import json
 import os
-# data: q, cq, (dq), (pq), y, *x, *cx
-# shared: x, cx, (dx), (px), word_counter, char_counter, word2vec
-# no metadata
 from collections import Counter
 
 from tqdm import tqdm

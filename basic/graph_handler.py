@@ -2,7 +2,6 @@ import gzip
 import json
 from json import encoder
 import os
-from IPython import embed
 import tensorflow as tf
 
 from basic.evaluator import Evaluation, F1Evaluation

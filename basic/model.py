@@ -1,7 +1,4 @@
 import random
-from IPython import embed
-
-
 import itertools
 import numpy as np
 import tensorflow as tf

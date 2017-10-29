@@ -4,7 +4,6 @@ import math
 import os
 import shutil
 from pprint import pprint
-from IPython import embed
 
 import tensorflow as tf
 from tqdm import tqdm

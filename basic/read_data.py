@@ -6,7 +6,6 @@ import math
 from collections import defaultdict
 
 import numpy as np
-from IPython import embed
 
 from my.tensorflow import grouper
 from my.utils import index
