@@ -1,0 +1,193 @@
+Baseline MAPs for the all subtasks on SemEval2016-Task3-CQA-QL-dev-subtaskA.xml, SemEval2016-Task3-CQA-QL-dev.xml, and SemEval2016-Task3-CQA-MD-dev-subtaskD.xml.gz
+
+(a) baselines using the default ordering (as for the IR engine)
+  Subtask A: MAP: 0.5384
+  Subtask B: MAP: 0.7135
+  Subtask C: MAP: 0.3065
+  Subtask D: MAP: 0.2855
+
+(b) random baselines
+  Subtask A: MAP: 0.4556
+  Subtask B: MAP: 0.5595
+  Subtask C: MAP: 0.1383
+  Subtask D: MAP: 0.3109
+
+ 
+$ python MAP_scripts/ev.py SemEval2016-Task3-CQA-QL-dev-subtaskA.xml.subtaskA.relevancy SemEval2016-Task3-CQA-QL-dev-subtaskA.xml.subtaskA.pred
+
+*** Official score (MAP for SYS): 0.4556
+
+
+******************************
+*** Classification results ***
+******************************
+
+Acc = 0.4332
+P   = 0.3444
+R   = 0.7641
+F1  = 0.4747
+
+
+********************************
+*** Detailed ranking results ***
+********************************
+
+IR  -- Score for the output of the IR system (baseline).
+SYS -- Score for the output of the tested system.
+
+           IR   SYS
+MAP   : 0.5384 0.4556
+AvgRec: 0.7278 0.6542
+MRR   :  63.13  53.50
+              IR    SYS              IR    SYS              IR    SYS            IR  SYS
+REC-1@01:  50.82  36.07  ACC@01:  50.82  36.07  AC1@01:   0.59   0.42  AC2@01:  124   88
+REC-1@02:  64.75  56.97  ACC@02:  44.47  35.86  AC1@02:   0.55   0.44  AC2@02:  217  175
+REC-1@03:  74.18  65.16  ACC@03:  43.03  34.56  AC1@03:   0.58   0.47  AC2@03:  315  253
+REC-1@04:  77.46  73.77  ACC@04:  41.50  34.94  AC1@04:   0.62   0.52  AC2@04:  405  341
+REC-1@05:  80.74  78.69  ACC@05:  40.08  34.34  AC1@05:   0.67   0.57  AC2@05:  489  419
+REC-1@06:  81.15  81.56  ACC@06:  38.46  34.56  AC1@06:   0.73   0.66  AC2@06:  563  506
+REC-1@07:  83.20  83.61  ACC@07:  36.42  34.31  AC1@07:   0.78   0.74  AC2@07:  622  586
+REC-1@08:  83.61  86.07  ACC@08:  35.19  34.38  AC1@08:   0.85   0.83  AC2@08:  687  671
+REC-1@09:  86.07  86.07  ACC@09:  34.06  33.56  AC1@09:   0.92   0.90  AC2@09:  748  737
+REC-1@10:  86.48  86.48  ACC@10:  33.52  33.52  AC1@10:   1.00   1.00  AC2@10:  818  818
+
+REC-1 - percentage of questions with at least 1 correct answer in the top @X positions (useful for tasks where questions have at most one correct answer)
+ACC   - accuracy, i.e., number of correct answers retrieved at rank @X normalized by the rank and the total number of questions
+AC1   - the number of correct answers at @X normalized by the number of maximum possible answers (perfect re-ranker)
+AC2   - the absolute number of correct answers at @X
+
+
+
+$  python MAP_scripts/ev.py SemEval2016-Task3-CQA-QL-dev.xml.subtaskB.relevancy SemEval2016-Task3-CQA-QL-dev.xml.subtaskB.pred
+
+*** Official score (MAP for SYS): 0.5595
+
+
+******************************
+*** Classification results ***
+******************************
+
+Acc = 0.4880
+P   = 0.4432
+R   = 0.7664
+F1  = 0.5616
+
+
+********************************
+*** Detailed ranking results ***
+********************************
+
+IR  -- Score for the output of the IR system (baseline).
+SYS -- Score for the output of the tested system.
+
+           IR   SYS
+MAP   : 0.7135 0.5595
+AvgRec: 0.8611 0.7323
+MRR   :  76.67  62.23
+              IR    SYS              IR    SYS              IR    SYS            IR  SYS
+REC-1@01:  70.00  48.00  ACC@01:  70.00  48.00  AC1@01:   0.81   0.56  AC2@01:   35   24
+REC-1@02:  82.00  62.00  ACC@02:  69.00  47.00  AC1@02:   0.83   0.57  AC2@02:   69   47
+REC-1@03:  82.00  80.00  ACC@03:  62.67  46.67  AC1@03:   0.82   0.61  AC2@03:   94   70
+REC-1@04:  82.00  82.00  ACC@04:  57.00  47.00  AC1@04:   0.80   0.66  AC2@04:  114   94
+REC-1@05:  82.00  84.00  ACC@05:  54.40  46.40  AC1@05:   0.80   0.69  AC2@05:  136  116
+REC-1@06:  86.00  86.00  ACC@06:  52.00  46.00  AC1@06:   0.83   0.73  AC2@06:  156  138
+REC-1@07:  86.00  86.00  ACC@07:  49.71  45.14  AC1@07:   0.87   0.79  AC2@07:  174  158
+REC-1@08:  86.00  86.00  ACC@08:  46.50  43.00  AC1@08:   0.90   0.83  AC2@08:  186  172
+REC-1@09:  86.00  86.00  ACC@09:  44.67  42.00  AC1@09:   0.95   0.89  AC2@09:  201  189
+REC-1@10:  86.00  86.00  ACC@10:  42.80  42.80  AC1@10:   1.00   1.00  AC2@10:  214  214
+
+REC-1 - percentage of questions with at least 1 correct answer in the top @X positions (useful for tasks where questions have at most one correct answer)
+ACC   - accuracy, i.e., number of correct answers retrieved at rank @X normalized by the rank and the total number of questions
+AC1   - the number of correct answers at @X normalized by the number of maximum possible answers (perfect re-ranker)
+AC2   - the absolute number of correct answers at @X
+
+
+
+
+$ python MAP_scripts/ev.py SemEval2016-Task3-CQA-QL-dev.xml.subtaskC.relevancy SemEval2016-Task3-CQA-QL-dev.xml.subtaskC.pred
+
+*** Official score (MAP for SYS): 0.1383
+
+
+******************************
+*** Classification results ***
+******************************
+
+Acc = 0.2844
+P   = 0.0697
+R   = 0.7594
+F1  = 0.1277
+
+
+********************************
+*** Detailed ranking results ***
+********************************
+
+IR  -- Score for the output of the IR system (baseline).
+SYS -- Score for the output of the tested system.
+
+           IR   SYS
+MAP   : 0.3065 0.1383
+AvgRec: 0.3455 0.0956
+MRR   :  35.97  16.00
+              IR    SYS              IR    SYS              IR    SYS            IR  SYS
+REC-1@01:  30.00  10.00  ACC@01:  30.00  10.00  AC1@01:   0.38   0.12  AC2@01:   15    5
+REC-1@02:  36.00  16.00  ACC@02:  29.00   8.00  AC1@02:   0.39   0.11  AC2@02:   29    8
+REC-1@03:  42.00  18.00  ACC@03:  25.33   7.33  AC1@03:   0.36   0.10  AC2@03:   38   11
+REC-1@04:  44.00  18.00  ACC@04:  24.00   5.50  AC1@04:   0.36   0.08  AC2@04:   48   11
+REC-1@05:  44.00  20.00  ACC@05:  21.60   5.20  AC1@05:   0.34   0.08  AC2@05:   54   13
+REC-1@06:  44.00  22.00  ACC@06:  19.67   5.00  AC1@06:   0.32   0.08  AC2@06:   59   15
+REC-1@07:  44.00  24.00  ACC@07:  18.57   4.86  AC1@07:   0.32   0.08  AC2@07:   65   17
+REC-1@08:  46.00  26.00  ACC@08:  17.50   4.75  AC1@08:   0.32   0.09  AC2@08:   70   19
+REC-1@09:  48.00  32.00  ACC@09:  17.78   5.33  AC1@09:   0.34   0.10  AC2@09:   80   24
+REC-1@10:  48.00  36.00  ACC@10:  17.00   5.20  AC1@10:   0.34   0.10  AC2@10:   85   26
+
+REC-1 - percentage of questions with at least 1 correct answer in the top @X positions (useful for tasks where questions have at most one correct answer)
+ACC   - accuracy, i.e., number of correct answers retrieved at rank @X normalized by the rank and the total number of questions
+AC1   - the number of correct answers at @X normalized by the number of maximum possible answers (perfect re-ranker)
+AC2   - the absolute number of correct answers at @X
+
+
+
+$ python MAP_scripts/ev.py SemEval2016-Task3-CQA-MD-dev-subtaskD.xml.relevancy SemEval2016-Task3-CQA-MD-dev-subtaskD.xml.pred
+
+*** Official score (MAP for SYS): 0.3109
+
+
+******************************
+*** Classification results ***
+******************************
+
+Acc = 0.6742
+P   = 0.2033
+R   = 0.2012
+F1  = 0.2023
+
+
+********************************
+*** Detailed ranking results ***
+********************************
+
+IR  -- Score for the output of the IR system (baseline).
+SYS -- Score for the output of the tested system.
+
+           IR   SYS
+MAP   : 0.2855 0.3109
+AvgRec: 0.2796 0.3138
+MRR   :  31.39  35.86
+              IR    SYS              IR    SYS              IR    SYS            IR  SYS
+REC-1@01:  17.60  22.00  ACC@01:  17.60  22.00  AC1@01:   0.21   0.26  AC2@01:   44   55
+REC-1@02:  28.80  34.80  ACC@02:  16.80  21.40  AC1@02:   0.21   0.27  AC2@02:   84  107
+REC-1@03:  36.80  42.40  ACC@03:  17.33  20.40  AC1@03:   0.23   0.27  AC2@03:  130  153
+REC-1@04:  44.00  50.40  ACC@04:  17.90  20.90  AC1@04:   0.25   0.29  AC2@04:  179  209
+REC-1@05:  50.00  56.40  ACC@05:  18.40  20.80  AC1@05:   0.27   0.31  AC2@05:  230  260
+REC-1@06:  55.60  59.60  ACC@06:  18.47  20.33  AC1@06:   0.29   0.32  AC2@06:  277  305
+REC-1@07:  60.40  64.40  ACC@07:  18.46  20.46  AC1@07:   0.30   0.34  AC2@07:  323  358
+REC-1@08:  65.20  66.80  ACC@08:  18.90  20.10  AC1@08:   0.33   0.35  AC2@08:  378  402
+REC-1@09:  67.20  67.60  ACC@09:  18.89  19.69  AC1@09:   0.35   0.36  AC2@09:  425  443
+REC-1@10:  68.00  68.80  ACC@10:  18.76  19.72  AC1@10:   0.37   0.38  AC2@10:  469  493
+
+REC-1 - percentage of questions with at least 1 correct answer in the top @X positions (useful for tasks where questions have at most one correct answer)
+ACC   - accuracy, i.e., number of correct answers retrieved at rank @X normalized by the rank and the total number of questions
+AC1   - the number of correct answers at @X normalized by the number of maximum possible answers (perfect re-ranker)
+AC2   - the absolute number of correct answers at @X
