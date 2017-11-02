@@ -28,9 +28,10 @@ Python Packages
 
 ### 1. Quick Tutorial
 
-First, download data (SQuAD, WikiQA, SemEval-2016, GLoVe, NLTK). This will download files to $HOME/data
+First, download data (SQuAD, WikiQA, SemEval-2016, GLoVe, NLTK). This will download files to `$HOME/data`. Also, preprocess data and save them in `data`.
 ```
 chmod +x download.sh; ./download.sh
+chmod +x prepro.sh; ./prepro.sh
 ```
 
 Then, pretrain the model on SQuAD.
