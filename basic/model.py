@@ -254,7 +254,7 @@ class Model(object):
             y2 = tf.cast(tf.reshape(self.y2, [N, M*JX]), 'float')
             #ce_loss2 = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits( \
             #            self.logits2, y) * loss_mask * span_mask )
-            ce_loss2 = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits( self.logits2, y))
+            ce_loss2 = tf.reduce_mean(tf.nn.softmax_cross_entropy_with_logits( self.logits2, y2))
             tf.add_to_collection("losses", ce_loss2)
             self.loss_span1 = ce_loss
             self.loss_span2 = ce_loss2

@@ -11,12 +11,10 @@ PRETR_DIR=out/squad/$PRETR_FROM/$PRETR_RUN_ID
 	
 if [ $DATA = "wikiqa" ]
 then
-	python -m wikiqa.prepro-class
 	DATA_DIR="data/wikiqa-class"
 	ADD=""
 elif [ $DATA = "semeval" ]
 then
-	python -m semeval.prepro
 	DATA_DIR="data/semeval"
 	ADD="--load_shared --nocluster --sent_size_th 150 --ques_size_th 100"
 else
@@ -26,7 +24,7 @@ fi
 
 if [ $TASK = "finetune" ]
 then
-	python -m basic.cli --data_dir $DATA_DIR --out_base_dir out/$DATA --num_steps 5000 --load_path $PRETR_DIR/save/$PRETR_FROM-$STEP --shared_path $PRETR_DIR/shared.json --load_trained_model --run_id $RUN_ID $ADD
+	python -m basic.cli --data_dir $DATA_DIR --out_base_dir out/$DATA --load_path $PRETR_DIR/save/$PRETR_FROM-$STEP --shared_path $PRETR_DIR/shared.json --load_trained_model --run_id $RUN_ID $ADD
 elif [ "$TASK" = "test" ]
 then
 	python -m basic.cli --mode test --data_dir $DATA_DIR --out_base_dir out/$DATA --shared_path $PRETR_FROM/shared.json --run_id $RUN_ID --load_step $STEP $ADD

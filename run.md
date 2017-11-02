@@ -61,7 +61,7 @@ Note: Accuracy printed during training and testing is for each sentence, so it d
 
 Basically, it use pretrained model from SQuAD.
 ```
-python -m basic.cli --data_dir data/wikiqa-class --out_base_dir out/wikiqa --num_steps 5000 --load_path <LOAD_PATH> --shared_path <SHARED_PATH> --load_trained_model --dev_name dev
+python -m basic.cli --data_dir data/wikiqa-class --out_base_dir out/wikiqa --load_path <LOAD_PATH> --shared_path <SHARED_PATH> --load_trained_model --dev_name dev
 python -m basic.cli --mode test -data_dir data/wikiqa-class --out_base_dir out/wikiqa --shared_path <SHARED_PATH> --load_step <LOAD_STEP>
 ```
 
