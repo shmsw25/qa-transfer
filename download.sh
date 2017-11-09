@@ -17,8 +17,11 @@ rm $DATA_DIR/WikiQACorpus.zip
 SEMEVAL_DIR=$DATA_DIR/semeval
 mkdir $SEMEVAL_DIR
 wget http://alt.qcri.org/semeval2016/task3/data/uploads/semeval2016-task3-cqa-ql-traindev-v3.2.zip -O $DATA_DIR/semeval.zip
+wget http://alt.qcri.org/semeval2016/task3/data/uploads/semeval2016_task3_test.zip -O $DATA_DIR/semeval_test.zip
 unzip $DATA_DIR/semeval.zip -d $SEMEVAL_DIR
+unzip $DATA_DIR/semeval_test.zip -d $SEMEVAL_DIR
 rm $DATA_DIR/semeval.zip
+rm $DATA_DIR/semeval_test.zip
 
 # Download GloVe
 GLOVE_DIR=$DATA_DIR/glove
